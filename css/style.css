@@ -453,8 +453,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-brand-logo {
-  width: 52px;
-  height: 52px;
+  width: 62px;
+  height: 62px;
   border-radius: 0;
   object-fit: contain;
   mix-blend-mode: lighten;
