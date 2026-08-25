@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products Catalogue | Mani Electricals & Hardwares</title>
+  <meta name="description" content="Browse our complete range of electrical switches, wires, cables, LED lighting, fans, CPVC pipes, and hardware supplies in Coimbatore." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/logo.jpg" alt="Mani Electricals & Hardwares Logo" class="nav-brand-logo" />
+        <div>
+          <div style="line-height: 1.1;">MANI ELECTRICALS</div>
+          <div style="font-size: .68rem; font-weight: 600; color: var(--blue-electric); font-family: var(--font-primary); letter-spacing: .08em;">& HARDWARES</div>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <ul class="nav-menu">
+          <li><a href="index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="index.html#dealers" class="nav-link">Dealers</a></li>
+          <li><a href="products.html" class="nav-link active">Products</a></li>
+          <li><a href="index.html#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggleBtn" aria-label="Toggle theme">
+          <i data-lucide="sun" id="sunIcon" style="width: 18px; height: 18px; color: var(--gold);"></i>
+          <i data-lucide="moon" id="moonIcon" style="width: 18px; height: 18px; display: none;"></i>
+        </button>
+        <a href="https://wa.me/919952853697?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm" style="font-size: .78rem;">
+          <i data-lucide="message-circle" style="width: 15px; height: 15px;"></i> WhatsApp
+        </a>
+        <button class="icon-btn mobile-toggle" id="mobileToggleBtn" aria-label="Toggle menu">
+          <i data-lucide="menu" style="width: 20px; height: 20px;"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <button id="mobileCloseBtn" style="position: absolute; top: 24px; right: 24px; color: var(--text-1);" aria-label="Close menu">
+        <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+      </button>
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#dealers">Dealers</a>
+      <a href="products.html">Products</a>
+      <a href="index.html#testimonials">Testimonials</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="https://wa.me/919952853697?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="margin-top: 12px; justify-content: center;">
+        <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i> WhatsApp Us
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="section" style="padding-top: 60px; min-height: 85vh;">
+      <div class="section-energy-bg energy-products"></div>
+
+      <div class="container" style="position: relative; z-index: 1;">
+        <span class="label mb-2" style="display: block;">Product Catalogue</span>
+        <h1 class="heading-lg mb-3">
+          Browse Our <span class="text-gradient">Complete Range</span>
+        </h1>
+
+        <!-- Search Bar -->
+        <div class="search-wrap mb-2">
+          <i data-lucide="search" class="search-icon" style="width: 18px; height: 18px;"></i>
+          <input type="text" id="productSearchInput" class="search-bar" placeholder="Search by product name, category or brand..." />
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="filter-pills" id="filterPillsContainer">
+          <!-- Populated by products.js -->
+        </div>
+
+        <!-- Empty state message -->
+        <p id="noResultsMessage" class="text-secondary mt-4" style="display: none; font-size: 1.05rem;">
+          No products found matching your search. Try a different query or select "All".
+        </p>
+
+        <!-- Product Grid -->
+        <div class="product-grid" id="productGrid">
+          <!-- Rendered dynamically by js/products.js -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+            <img src="assets/logo.jpg" alt="Mani Electricals & Hardwares Logo" class="nav-brand-logo" />
+            <div>
+              <div style="font-weight: 700; font-size: .95rem; font-family: var(--font-primary); color: var(--text-1);">MANI ELECTRICALS</div>
+              <div style="font-size: .68rem; font-family: var(--font-primary); color: var(--blue-electric); letter-spacing: .08em; font-weight: 600;">& HARDWARES</div>
+            </div>
+          </div>
+          <p style="font-size: .85rem; color: var(--text-muted); line-height: 1.6; max-width: 290px;">
+            Reliable electrical, hardware and home utility products from trusted brands — all under one roof.
+          </p>
+          <p style="font-size: .78rem; color: var(--text-subtle); margin-top: 10px;">
+            GSTIN: 33EOPPM8991K1ZX
+          </p>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+
+        <div>
+          <h4>Categories</h4>
+          <a href="products.html">Electrical</a>
+          <a href="products.html">Lighting</a>
+          <a href="products.html">Hardware</a>
+          <a href="products.html">Plumbing</a>
+          <a href="products.html">Wires & Cables</a>
+          <a href="products.html">Fans</a>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 10px;">
+            <i data-lucide="map-pin" style="width: 16px; height: 16px; margin-top: 3px; flex-shrink: 0; color: var(--blue-electric);"></i>
+            <span style="font-size: .85rem; color: var(--text-muted);">Jeewa Nagar Road, K.K. Pudur, Coimbatore – 641038</span>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 10px;">
+            <i data-lucide="phone" style="width: 16px; height: 16px; color: var(--blue-electric);"></i>
+            <a href="tel:+919952853697" style="font-size: .85rem; margin-bottom: 0;">+91 99528 53697</a>
+          </div>
+          <a href="https://wa.me/919952853697?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm" style="margin-top: 8px;">
+            <i data-lucide="message-circle" style="width: 15px; height: 15px;"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="currentYear">2026</span> Mani Electricals & Hardwares. All rights reserved.</span>
+        <span>Built with precision in Coimbatore</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp & Scroll-to-Top -->
+  <a href="https://wa.me/919952853697?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Chat on WhatsApp">
+    <i data-lucide="message-circle" style="width: 28px; height: 28px;"></i>
+  </a>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+    <i data-lucide="chevron-up" style="width: 20px; height: 20px;"></i>
+  </button>
+
+  <!-- External Libraries -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Core Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

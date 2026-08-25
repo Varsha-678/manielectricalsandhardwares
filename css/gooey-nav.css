@@ -1,0 +1,213 @@
+:root {
+  --color-1: #20B8FF;
+  --color-2: #149EFF;
+  --color-3: #49D8FF;
+  --color-4: #5CA8FF;
+}
+
+.gooey-nav-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gooey-nav-container nav {
+  display: flex;
+  position: relative;
+  transform: translate3d(0, 0, 0.01px);
+}
+
+.gooey-nav-container nav ul {
+  display: flex;
+  gap: 0.5em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 3;
+  color: var(--text-muted, #9CB4C8);
+}
+
+.gooey-nav-container nav ul li {
+  border-radius: 100vw;
+  position: relative;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+  color: var(--text-muted, #9CB4C8);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.gooey-nav-container nav ul li:hover {
+  color: var(--text-1, #F5FAFF);
+}
+
+.gooey-nav-container nav ul li a {
+  display: inline-block;
+  padding: 0.45em 0.9em;
+  color: inherit;
+  text-decoration: none;
+  font-family: var(--font-primary, 'Poppins', sans-serif);
+  white-space: nowrap;
+}
+
+.gooey-nav-container nav ul li:focus-within:has(:focus-visible) {
+  box-shadow: 0 0 0 2px var(--blue-electric, #20B8FF);
+}
+
+.gooey-nav-container nav ul li::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 100vw;
+  background: var(--blue-electric, #20B8FF);
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.gooey-nav-container nav ul li.active {
+  color: #02070D;
+  text-shadow: none;
+  font-weight: 700;
+}
+
+.gooey-nav-container nav ul li.active::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gooey-nav-container .effect {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  opacity: 1;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+
+.gooey-nav-container .effect.text {
+  color: var(--text-muted, #9CB4C8);
+  transition: color 0.25s ease;
+  font-size: 0.88rem;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.gooey-nav-container .effect.text.active {
+  color: #02070D;
+}
+
+.gooey-nav-container .effect.filter {
+  filter: url(#gooey-nav-filter);
+  pointer-events: none;
+}
+
+.gooey-nav-container .effect.filter::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--blue-electric, #20B8FF);
+  transform: scale(0);
+  opacity: 0;
+  z-index: -1;
+  border-radius: 100vw;
+}
+
+.gooey-nav-container .effect.active::after {
+  animation: pill 0.3s ease both;
+}
+
+@keyframes pill {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.particle,
+.point {
+  display: block;
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  transform-origin: center;
+}
+
+.particle {
+  --time: 5s;
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 10px);
+  animation: particle calc(var(--time)) ease 1 -350ms;
+}
+
+.point {
+  background: var(--color);
+  opacity: 1;
+  animation: point calc(var(--time)) ease 1 -350ms;
+}
+
+@keyframes particle {
+  0% {
+    transform: rotate(0deg) translate(calc(var(--start-x)), calc(var(--start-y)));
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+
+  70% {
+    transform: rotate(calc(var(--rotate) * 0.5)) translate(calc(var(--end-x) * 1.2), calc(var(--end-y) * 1.2));
+    opacity: 1;
+    animation-timing-function: ease;
+  }
+
+  85% {
+    transform: rotate(calc(var(--rotate) * 0.66)) translate(calc(var(--end-x)), calc(var(--end-y)));
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotate(calc(var(--rotate) * 1.2)) translate(calc(var(--end-x) * 0.5), calc(var(--end-y) * 0.5));
+    opacity: 1;
+  }
+}
+
+@keyframes point {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+
+  25% {
+    transform: scale(calc(var(--scale) * 0.25));
+  }
+
+  38% {
+    opacity: 1;
+  }
+
+  65% {
+    transform: scale(var(--scale));
+    opacity: 1;
+    animation-timing-function: ease;
+  }
+
+  85% {
+    transform: scale(var(--scale));
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}

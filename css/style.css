@@ -1,0 +1,1466 @@
+/* ==========================================================================
+   MANI ELECTRICALS & HARDWARES
+   SWISS × DARK ELECTRICAL ENERGY × REFINED GLASSMORPHISM DESIGN SYSTEM
+   Typography: Poppins · Precision · Industrial · Minimal · Trustworthy
+   ========================================================================== */
+
+/* --- 1. DESIGN TOKENS ------------------------------------------------ */
+:root {
+  --font-primary: 'Poppins', sans-serif;
+  --font-sans: 'Poppins', sans-serif;
+  --font-mono: 'Poppins', sans-serif;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-full: 9999px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* --- DARK ELECTRICAL PALETTE --- */
+  --bg-primary: #02070D;
+  --bg-secondary: #041019;
+  --bg-tertiary: #061521;
+  --bg-deep: #081B27;
+  --bg-surface: rgba(8, 25, 38, 0.55);
+  --bg-surface-elevated: #091A28;
+  --bg-surface-deep: #030C14;
+
+  /* --- ELECTRIC BLUE ACCENTS --- */
+  --blue-electric: #20C4FF;
+  --blue-primary: #13A8FF;
+  --blue-vivid: #42D8FF;
+  --blue-glow: rgba(32, 196, 255, 0.16);
+  --blue-glow-subtle: rgba(19, 168, 255, 0.08);
+  --blue-glow-strong: rgba(32, 196, 255, 0.35);
+
+  --gold: #F5A623;
+  --whatsapp: #25D366;
+  --whatsapp-dark: #1DA851;
+
+  /* --- TYPOGRAPHY COLORS --- */
+  --text-primary: #F5FAFF;
+  --text-1: #F5FAFF;
+  --text-secondary: #9CB4C8;
+  --text-2: #9CB4C8;
+  --text-muted: #7391A8;
+  --text-3: #7391A8;
+  --text-subtle: #4D6B82;
+
+  /* --- TECHNICAL BORDERS --- */
+  --border-subtle: rgba(150, 210, 240, 0.12);
+  --border: rgba(150, 210, 240, 0.12);
+  --border-medium: rgba(150, 210, 240, 0.18);
+  --border-electric: rgba(32, 196, 255, 0.35);
+
+  /* --- SHADOWS --- */
+  --shadow-glass: 0 16px 36px rgba(0, 4, 10, 0.5), 0 0 0 1px var(--border-subtle);
+  --shadow-card: 0 12px 32px rgba(0, 4, 10, 0.55), 0 0 0 1px var(--border-subtle);
+  --shadow-hover: 0 16px 44px rgba(0, 4, 10, 0.75), 0 0 20px rgba(32, 196, 255, 0.15);
+  --shadow-btn-primary: 0 4px 20px rgba(19, 168, 255, 0.3);
+  --shadow-btn-wa: none;
+}
+
+/* Light Mode Overrides */
+html[data-theme="light"] {
+  --bg-primary: #F0F5F9;
+  --bg-secondary: #E4EEF5;
+  --bg-tertiary: #D6E4EE;
+  --bg-deep: #C7DBE8;
+  --bg-surface: rgba(255, 255, 255, 0.75);
+  --bg-surface-elevated: #FFFFFF;
+  --bg-surface-deep: #E8F0F7;
+
+  --text-primary: #041019;
+  --text-1: #041019;
+  --text-secondary: #2B455B;
+  --text-2: #2B455B;
+  --text-muted: #55728A;
+  --text-3: #55728A;
+  --text-subtle: #7A96AD;
+
+  --border-subtle: rgba(19, 168, 255, 0.16);
+  --border: rgba(19, 168, 255, 0.16);
+  --border-medium: rgba(19, 168, 255, 0.26);
+
+  --shadow-card: 0 8px 24px rgba(4, 16, 25, 0.08), 0 0 0 1px var(--border-subtle);
+  --shadow-hover: 0 14px 36px rgba(4, 16, 25, 0.15), 0 0 18px rgba(19, 168, 255, 0.2);
+}
+
+/* --- 2. RESET & BASE ------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.68;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s var(--ease);
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-primary);
+  border: none;
+  background: none;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: var(--blue-primary);
+  color: #02070D;
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue-electric);
+  outline-offset: 2px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #0D2A3F;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue-primary);
+}
+
+/* --- 3. SWISS GRID & LAYOUT SYSTEM ---------------------------------- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+.section {
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 0;
+  }
+}
+
+/* Section atmospheric backgrounds */
+.section-energy-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.energy-default {
+  background:
+    radial-gradient(circle at 75% 30%, rgba(32, 196, 255, 0.04), transparent 50%),
+    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+}
+
+.energy-about {
+  background:
+    radial-gradient(circle at 85% 30%, rgba(32, 196, 255, 0.05), transparent 50%),
+    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 60%, var(--bg-tertiary) 100%);
+}
+
+.energy-dealers {
+  background:
+    radial-gradient(circle at 20% 50%, rgba(32, 196, 255, 0.05), transparent 45%),
+    linear-gradient(180deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%);
+}
+
+.energy-products {
+  background:
+    radial-gradient(circle at 75% 20%, rgba(32, 196, 255, 0.06), transparent 50%),
+    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+}
+
+.energy-owner {
+  background:
+    radial-gradient(circle at 20% 40%, rgba(32, 196, 255, 0.05), transparent 45%),
+    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);
+}
+
+.energy-testimonials {
+  background:
+    radial-gradient(circle at 80% 60%, rgba(32, 196, 255, 0.04), transparent 45%),
+    linear-gradient(180deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+}
+
+.energy-contact {
+  background:
+    radial-gradient(circle at 50% 85%, rgba(32, 196, 255, 0.08), transparent 55%),
+    linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+/* --- 4. POPPINS SLEEK TYPOGRAPHY HIERARCHY ----------------------- */
+.label,
+.eyebrow {
+  font-family: var(--font-primary);
+  font-size: 0.74rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue-electric);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.label::before,
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: var(--blue-electric);
+  border-radius: 1px;
+  box-shadow: 0 0 8px var(--blue-glow);
+}
+
+.heading-xl {
+  font-family: var(--font-primary);
+  font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.06;
+  color: var(--text-primary);
+}
+
+.heading-lg {
+  font-family: var(--font-primary);
+  font-size: clamp(1.9rem, 3.8vw, 2.7rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+  color: var(--text-primary);
+}
+
+.heading-md {
+  font-family: var(--font-primary);
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+.text-gradient,
+.text-electric {
+  background: linear-gradient(105deg, var(--blue-electric) 0%, var(--blue-vivid) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.text-white {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.text-muted {
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+/* Utilities */
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mt-4 { margin-top: 32px; }
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.mb-4 { margin-bottom: 32px; }
+
+.gap-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+/* --- 5. BUTTON SYSTEM ------------------------------------------------ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 0.88rem;
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  transition: all 0.22s var(--ease);
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--blue-vivid) 0%, var(--blue-primary) 100%);
+  color: #02070D;
+  font-weight: 500;
+  box-shadow: var(--shadow-btn-primary);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(32, 196, 255, 0.4);
+  color: #02070D;
+}
+
+.btn-outline {
+  background: rgba(8, 25, 38, 0.6);
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-weight: 500;
+}
+.btn-outline:hover {
+  border-color: var(--blue-electric);
+  color: var(--blue-electric);
+  background: rgba(13, 42, 63, 0.7);
+  box-shadow: 0 0 16px rgba(32, 196, 255, 0.14);
+}
+
+.btn-whatsapp {
+  background: var(--whatsapp);
+  color: #041c0e;
+  font-weight: 500;
+  box-shadow: none;
+}
+.btn-whatsapp:hover {
+  transform: translateY(-1px);
+  background: var(--whatsapp-dark);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+
+.btn-sm {
+  padding: 7px 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* --- 6. REFINED DARK GLASS NAVBAR ----------------------------------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 14px 0;
+  transition: all 0.25s ease;
+  background: rgba(3, 12, 20, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.navbar.scrolled {
+  background: rgba(2, 8, 14, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-medium);
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.55);
+  padding: 10px 0;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.nav-brand-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 0;
+  object-fit: cover;
+  mix-blend-mode: lighten;
+}
+
+.nav-brand-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(155deg, var(--blue-vivid), var(--blue-primary) 75%, #0F65C7);
+  color: #02070D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 16px var(--blue-glow);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 4px 6px;
+  background: rgba(8, 25, 38, 0.45);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+}
+
+.nav-link {
+  font-family: var(--font-primary);
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  transition: all 0.2s var(--ease);
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+  background: rgba(32, 196, 255, 0.08);
+}
+
+.nav-link.active {
+  color: #02070D;
+  background: var(--blue-electric);
+  font-weight: 700;
+  box-shadow: 0 0 16px rgba(32, 196, 255, 0.35);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-subtle);
+  background: rgba(8, 25, 38, 0.6);
+  color: var(--text-secondary);
+  transition: all 0.2s;
+}
+
+.icon-btn:hover {
+  color: var(--blue-electric);
+  border-color: var(--blue-electric);
+  box-shadow: 0 0 12px var(--blue-glow);
+}
+
+.mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+  .mobile-toggle {
+    display: flex;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--bg-primary);
+  padding: 80px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-left: 1px solid var(--border-medium);
+  transform: translateX(100%);
+  transition: transform 0.3s var(--ease);
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-menu a {
+  font-family: var(--font-primary);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* --- 7. HOME HERO (TYPOGRAPHY-FIRST SWISS EDITORIAL) ----------------- */
+.hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 35% 45%, rgba(19, 168, 255, 0.12), transparent 55%),
+    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  padding: 100px 0 80px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.hero-content {
+  grid-column: 1 / span 9;
+  z-index: 2;
+}
+
+@media (max-width: 992px) {
+  .hero-content {
+    grid-column: 1 / span 12;
+  }
+}
+
+.hero-meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-meta-item i {
+  color: var(--blue-electric);
+}
+
+/* --- 8. STATS STRIP (STRUCTURED MATHEMATICAL METRIC GRID) ----------- */
+.stats-strip {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 32px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  text-align: center;
+}
+
+.stat-col {
+  padding: 12px 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-col:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: var(--border-subtle);
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat-col:nth-child(2)::after {
+    display: none;
+  }
+  .stat-col:nth-child(1),
+  .stat-col:nth-child(2) {
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 20px;
+  }
+  .stat-col:nth-child(3),
+  .stat-col:nth-child(4) {
+    padding-top: 20px;
+  }
+}
+
+.stat-value {
+  font-family: var(--font-primary);
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: var(--blue-electric);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-family: var(--font-primary);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* --- 9. ABOUT SECTION (SWISS 2-COLUMN EDITORIAL) --------------------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+.about-img {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-medium);
+  background: var(--bg-surface-deep);
+  box-shadow: var(--shadow-card);
+}
+
+.about-img img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .about-img img {
+    height: 260px;
+  }
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+.checklist-item i {
+  color: var(--blue-electric);
+  flex-shrink: 0;
+}
+
+/* --- 10. DEALER MARQUEE --------------------------------------------- */
+.marquee-section {
+  overflow: hidden;
+  padding: 40px 0 0;
+}
+
+.marquee-container {
+  overflow: hidden;
+  margin: 0 -24px;
+  padding: 0 0 40px;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll-x 30s linear infinite;
+  width: max-content;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.dealer-card {
+  min-width: 200px;
+  padding: 22px 18px;
+  text-align: center;
+  flex-shrink: 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.25s var(--ease);
+}
+
+.dealer-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--blue-electric);
+  background: var(--bg-surface-elevated);
+  box-shadow: 0 8px 24px rgba(32, 196, 255, 0.12);
+}
+
+.dealer-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: #031019;
+  border: 1px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 1.15rem;
+  color: var(--blue-electric);
+  font-family: var(--font-primary);
+}
+
+.dealer-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 4px;
+  overflow: hidden;
+}
+
+.dealer-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-xs);
+}
+
+.dealer-name {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 0.92rem;
+  margin-top: 12px;
+  color: var(--text-primary);
+}
+
+.dealer-cat {
+  font-family: var(--font-primary);
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-top: 4px;
+}
+
+/* --- 11. PRODUCT GRID & CARDS --------------------------------------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s var(--ease);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--blue-electric);
+  box-shadow: var(--shadow-hover);
+}
+
+.product-card-img {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-surface-deep);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-real-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease);
+}
+
+.product-card:hover .product-real-img {
+  transform: scale(1.05);
+}
+
+.product-card-icon-wrap {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  background: rgba(32, 196, 255, 0.08);
+  border: 1px solid rgba(32, 196, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-electric);
+}
+
+.product-card-category-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: var(--font-primary);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: rgba(2, 7, 13, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-subtle);
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.product-card-body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-brand {
+  font-family: var(--font-primary);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--blue-electric);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.product-name {
+  font-family: var(--font-primary);
+  font-size: 0.98rem;
+  font-weight: 500;
+  margin: 6px 0 8px;
+  line-height: 1.35;
+  color: var(--text-primary);
+}
+
+.product-desc {
+  font-family: var(--font-primary);
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+  font-weight: 300;
+}
+
+.product-price {
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+
+.product-actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+/* --- 12. PROPRIETOR SECTION (SWISS EDITORIAL) ----------------------- */
+.owner-grid {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .owner-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.owner-img {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-medium);
+  background: var(--bg-surface-deep);
+  box-shadow: var(--shadow-card);
+}
+
+.owner-img img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  object-position: top;
+}
+
+@media (max-width: 600px) {
+  .owner-img img {
+    height: 320px;
+  }
+}
+
+.value-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.value-chip {
+  padding: 6px 14px;
+  border-radius: var(--radius-xs);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  font-family: var(--font-primary);
+}
+
+/* --- 13. TESTIMONIALS (SWISS EDITORIAL QUOTES) ---------------------- */
+.testimonial-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.testimonial-card {
+  padding: 28px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-stars {
+  color: var(--gold);
+  margin-bottom: 14px;
+  display: flex;
+  gap: 4px;
+}
+
+.testimonial-text {
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.testimonial-author {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 0.86rem;
+  margin-top: 20px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.testimonial-author::before {
+  content: '';
+  width: 14px;
+  height: 2px;
+  background: var(--blue-electric);
+}
+
+/* --- 14. CONTACT SECTION -------------------------------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.contact-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: #041421;
+  border: 1px solid var(--border-subtle);
+  color: var(--blue-electric);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  padding: 32px;
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-glass);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 16px;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xs);
+  background: rgba(3, 12, 20, 0.7);
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  font-family: var(--font-primary);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--blue-electric);
+  box-shadow: 0 0 0 3px var(--blue-glow);
+}
+
+.contact-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* --- 15. MINIMAL DARK FOOTER ---------------------------------------- */
+.footer {
+  background: #01050A;
+  color: var(--text-secondary);
+  padding: 64px 0 24px;
+  border-top: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue-electric), transparent);
+  opacity: 0.4;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer h4 {
+  font-family: var(--font-primary);
+  font-size: 0.76rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.footer a {
+  font-family: var(--font-primary);
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.footer a:hover {
+  color: var(--blue-electric);
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(150, 210, 240, 0.06);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: var(--font-primary);
+  font-weight: 400;
+}
+
+/* --- 16. FLOATING UI CONTROLS ---------------------------------------- */
+.wa-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  color: #041c0e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  transition: all 0.25s var(--ease);
+}
+
+.wa-float:hover {
+  transform: scale(1.05);
+  background: var(--whatsapp-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  z-index: 90;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: rgba(8, 25, 38, 0.85);
+  border: 1px solid var(--border-medium);
+  color: var(--blue-electric);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s;
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- 17. CATALOGUE & SEARCH ------------------------------------------ */
+.search-bar {
+  width: 100%;
+  padding: 14px 20px 14px 48px;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-family: var(--font-primary);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: var(--blue-electric);
+  box-shadow: 0 0 0 3px var(--blue-glow);
+}
+
+.search-wrap {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.filter-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.pill {
+  padding: 7px 16px;
+  border-radius: var(--radius-xs);
+  font-size: 0.82rem;
+  font-weight: 500;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  background: var(--bg-surface);
+  font-family: var(--font-primary);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.pill.active,
+.pill:hover {
+  background: var(--blue-primary);
+  color: #02070D;
+  font-weight: 500;
+  border-color: var(--blue-electric);
+  box-shadow: 0 0 16px rgba(19, 168, 255, 0.3);
+}
+
+/* --- 18. PRODUCT DETAIL ---------------------------------------------- */
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detail-img {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--border-medium);
+  background: var(--bg-surface-deep);
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-real-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-img-icon-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-md);
+  background: rgba(32, 196, 255, 0.08);
+  border: 1px solid rgba(32, 196, 255, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-electric);
+  box-shadow: 0 0 24px rgba(32, 196, 255, 0.2);
+}
+
+.detail-img-badge {
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  font-family: var(--font-primary);
+}
+
+.spec-table td {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.88rem;
+}
+
+.spec-table td:first-child {
+  font-weight: 600;
+  color: var(--text-muted);
+  width: 40%;
+}
+
+.spec-table td:last-child {
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+/* --- 19. PRIVACY POLICY / SIMPLE PAGES ------------------------------- */
+.page-content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 100px 24px 80px;
+  color: var(--text-secondary);
+  font-family: var(--font-primary);
+}
+
+.page-content h1 {
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+.page-content p {
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+/* --- 20. ANIMATIONS (REDUCED-MOTION SAFE) ----------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
