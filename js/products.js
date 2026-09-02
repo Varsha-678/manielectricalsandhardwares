@@ -78,7 +78,7 @@
                 <a href="product-detail.html?id=${p.id}" class="btn btn-outline btn-sm" style="flex: 1; justify-content: center;">
                   Details <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
                 </a>
-                <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm" aria-label="Enquire on WhatsApp for ${p.name}">
+                <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="Enquire on WhatsApp for ${p.name}" style="color: var(--blue-electric); border-color: var(--border-medium);">
                   <i data-lucide="message-circle" style="width: 14px; height: 14px;"></i>
                 </a>
               </div>

@@ -1,7 +1,7 @@
 /* ==========================================================================
    MANI ELECTRICALS & HARDWARES
-   SWISS × DARK ELECTRICAL ENERGY × REFINED GLASSMORPHISM DESIGN SYSTEM
-   Typography: Poppins · Precision · Industrial · Minimal · Trustworthy
+   SWISS × MODERN CLEAN WHITE THEME × ELECTRIC ENERGY DESIGN SYSTEM
+   Typography: Poppins · Precision · Clean · High Contrast · Trustworthy
    ========================================================================== */
 
 /* --- 1. DESIGN TOKENS ------------------------------------------------ */
@@ -18,74 +18,48 @@
   --radius-full: 9999px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* --- DARK ELECTRICAL PALETTE --- */
-  --bg-primary: #02070D;
-  --bg-secondary: #041019;
-  --bg-tertiary: #061521;
-  --bg-deep: #081B27;
-  --bg-surface: rgba(8, 25, 38, 0.55);
-  --bg-surface-elevated: #091A28;
-  --bg-surface-deep: #030C14;
+  /* --- CLEAN WHITE & LIGHT PALETTE --- */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-tertiary: #F1F5F9;
+  --bg-deep: #E2E8F0;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #FFFFFF;
+  --bg-surface-deep: #F8FAFC;
 
-  /* --- ELECTRIC BLUE ACCENTS --- */
-  --blue-electric: #20C4FF;
-  --blue-primary: #13A8FF;
-  --blue-vivid: #42D8FF;
-  --blue-glow: rgba(32, 196, 255, 0.16);
-  --blue-glow-subtle: rgba(19, 168, 255, 0.08);
-  --blue-glow-strong: rgba(32, 196, 255, 0.35);
+  /* --- VIBRANT ELECTRIC BLUE ACCENTS --- */
+  --blue-electric: #0284C7;
+  --blue-primary: #0284C7;
+  --blue-vivid: #0369A1;
+  --blue-glow: rgba(2, 132, 199, 0.12);
+  --blue-glow-subtle: rgba(2, 132, 199, 0.05);
+  --blue-glow-strong: rgba(2, 132, 199, 0.25);
 
-  --gold: #F5A623;
+  --gold: #D97706;
   --whatsapp: #25D366;
-  --whatsapp-dark: #1DA851;
+  --whatsapp-dark: #128C7E;
 
-  /* --- TYPOGRAPHY COLORS --- */
-  --text-primary: #F5FAFF;
-  --text-1: #F5FAFF;
-  --text-secondary: #9CB4C8;
-  --text-2: #9CB4C8;
-  --text-muted: #7391A8;
-  --text-3: #7391A8;
-  --text-subtle: #4D6B82;
+  /* --- TYPOGRAPHY COLORS (OPTIMAL CONTRAST ON WHITE) --- */
+  --text-primary: #0F172A;
+  --text-1: #0F172A;
+  --text-secondary: #334155;
+  --text-2: #334155;
+  --text-muted: #64748B;
+  --text-3: #64748B;
+  --text-subtle: #94A3B8;
 
   /* --- TECHNICAL BORDERS --- */
-  --border-subtle: rgba(150, 210, 240, 0.12);
-  --border: rgba(150, 210, 240, 0.12);
-  --border-medium: rgba(150, 210, 240, 0.18);
-  --border-electric: rgba(32, 196, 255, 0.35);
+  --border-subtle: #E2E8F0;
+  --border: #E2E8F0;
+  --border-medium: #CBD5E1;
+  --border-electric: rgba(2, 132, 199, 0.35);
 
   /* --- SHADOWS --- */
-  --shadow-glass: 0 16px 36px rgba(0, 4, 10, 0.5), 0 0 0 1px var(--border-subtle);
-  --shadow-card: 0 12px 32px rgba(0, 4, 10, 0.55), 0 0 0 1px var(--border-subtle);
-  --shadow-hover: 0 16px 44px rgba(0, 4, 10, 0.75), 0 0 20px rgba(32, 196, 255, 0.15);
-  --shadow-btn-primary: 0 4px 20px rgba(19, 168, 255, 0.3);
-  --shadow-btn-wa: none;
-}
-
-/* Light Mode Overrides */
-html[data-theme="light"] {
-  --bg-primary: #F0F5F9;
-  --bg-secondary: #E4EEF5;
-  --bg-tertiary: #D6E4EE;
-  --bg-deep: #C7DBE8;
-  --bg-surface: rgba(255, 255, 255, 0.75);
-  --bg-surface-elevated: #FFFFFF;
-  --bg-surface-deep: #E8F0F7;
-
-  --text-primary: #041019;
-  --text-1: #041019;
-  --text-secondary: #2B455B;
-  --text-2: #2B455B;
-  --text-muted: #55728A;
-  --text-3: #55728A;
-  --text-subtle: #7A96AD;
-
-  --border-subtle: rgba(19, 168, 255, 0.16);
-  --border: rgba(19, 168, 255, 0.16);
-  --border-medium: rgba(19, 168, 255, 0.26);
-
-  --shadow-card: 0 8px 24px rgba(4, 16, 25, 0.08), 0 0 0 1px var(--border-subtle);
-  --shadow-hover: 0 14px 36px rgba(4, 16, 25, 0.15), 0 0 18px rgba(19, 168, 255, 0.2);
+  --shadow-glass: 0 10px 30px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.04);
+  --shadow-card: 0 4px 20px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
+  --shadow-hover: 0 14px 32px rgba(15, 23, 42, 0.1), 0 0 16px rgba(2, 132, 199, 0.12);
+  --shadow-btn-primary: 0 4px 14px rgba(2, 132, 199, 0.28);
+  --shadow-btn-wa: 0 2px 8px rgba(37, 211, 102, 0.25);
 }
 
 /* --- 2. RESET & BASE ------------------------------------------------- */
@@ -157,8 +131,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::selection {
-  background: var(--blue-primary);
-  color: #02070D;
+  background: #E0F2FE;
+  color: #0369A1;
 }
 
 :focus-visible {
@@ -168,17 +142,17 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #0D2A3F;
-  border-radius: 3px;
+  background: #CBD5E1;
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--blue-primary);
+  background: var(--blue-electric);
 }
 
 /* --- 3. SWISS GRID & LAYOUT SYSTEM ---------------------------------- */
@@ -216,44 +190,44 @@ h1, h2, h3, h4, h5, h6 {
 
 .energy-default {
   background:
-    radial-gradient(circle at 75% 30%, rgba(32, 196, 255, 0.04), transparent 50%),
+    radial-gradient(circle at 75% 30%, rgba(2, 132, 199, 0.04), transparent 50%),
     linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
 }
 
 .energy-about {
   background:
-    radial-gradient(circle at 85% 30%, rgba(32, 196, 255, 0.05), transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(2, 132, 199, 0.05), transparent 50%),
     linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 60%, var(--bg-tertiary) 100%);
 }
 
 .energy-dealers {
   background:
-    radial-gradient(circle at 20% 50%, rgba(32, 196, 255, 0.05), transparent 45%),
-    linear-gradient(180deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%);
+    radial-gradient(circle at 20% 50%, rgba(2, 132, 199, 0.04), transparent 45%),
+    linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
 }
 
 .energy-products {
   background:
-    radial-gradient(circle at 75% 20%, rgba(32, 196, 255, 0.06), transparent 50%),
+    radial-gradient(circle at 75% 20%, rgba(2, 132, 199, 0.05), transparent 50%),
     linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
 }
 
 .energy-owner {
   background:
-    radial-gradient(circle at 20% 40%, rgba(32, 196, 255, 0.05), transparent 45%),
-    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);
+    radial-gradient(circle at 20% 40%, rgba(2, 132, 199, 0.04), transparent 45%),
+    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 
 .energy-testimonials {
   background:
-    radial-gradient(circle at 80% 60%, rgba(32, 196, 255, 0.04), transparent 45%),
-    linear-gradient(180deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+    radial-gradient(circle at 80% 60%, rgba(2, 132, 199, 0.04), transparent 45%),
+    linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
 }
 
 .energy-contact {
   background:
-    radial-gradient(circle at 50% 85%, rgba(32, 196, 255, 0.08), transparent 55%),
-    linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    radial-gradient(circle at 50% 85%, rgba(2, 132, 199, 0.05), transparent 55%),
+    linear-gradient(180deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%);
 }
 
 /* --- 4. POPPINS SLEEK TYPOGRAPHY HIERARCHY ----------------------- */
@@ -261,39 +235,26 @@ h1, h2, h3, h4, h5, h6 {
 .eyebrow {
   font-family: var(--font-primary);
   font-size: 0.74rem;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--blue-electric);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.label::before,
-.eyebrow::before {
-  content: '';
   display: inline-block;
-  width: 5px;
-  height: 5px;
-  background: var(--blue-electric);
-  border-radius: 1px;
-  box-shadow: 0 0 8px var(--blue-glow);
 }
 
 .heading-xl {
   font-family: var(--font-primary);
   font-size: clamp(2.6rem, 5.5vw, 4.4rem);
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: -0.035em;
-  line-height: 1.06;
+  line-height: 1.08;
   color: var(--text-primary);
 }
 
 .heading-lg {
   font-family: var(--font-primary);
   font-size: clamp(1.9rem, 3.8vw, 2.7rem);
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.18;
   color: var(--text-primary);
@@ -302,7 +263,7 @@ h1, h2, h3, h4, h5, h6 {
 .heading-md {
   font-family: var(--font-primary);
   font-size: clamp(1.2rem, 2.2vw, 1.55rem);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.015em;
   line-height: 1.25;
   color: var(--text-primary);
@@ -310,7 +271,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-gradient,
 .text-electric {
-  background: linear-gradient(105deg, var(--blue-electric) 0%, var(--blue-vivid) 100%);
+  background: linear-gradient(105deg, #0284C7 0%, #0369A1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -323,13 +284,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-secondary {
   color: var(--text-secondary);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.75;
 }
 
 .text-muted {
   color: var(--text-muted);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* Utilities */
@@ -367,43 +328,42 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--blue-vivid) 0%, var(--blue-primary) 100%);
-  color: #02070D;
-  font-weight: 500;
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+  color: #FFFFFF;
+  font-weight: 600;
   box-shadow: var(--shadow-btn-primary);
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(32, 196, 255, 0.4);
-  color: #02070D;
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
+  color: #FFFFFF;
 }
 
 .btn-outline {
-  background: rgba(8, 25, 38, 0.6);
+  background: #FFFFFF;
   border: 1px solid var(--border-medium);
   color: var(--text-primary);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   font-weight: 500;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
 }
 .btn-outline:hover {
   border-color: var(--blue-electric);
   color: var(--blue-electric);
-  background: rgba(13, 42, 63, 0.7);
-  box-shadow: 0 0 16px rgba(32, 196, 255, 0.14);
+  background: #F0F9FF;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.12);
 }
 
 .btn-whatsapp {
   background: var(--whatsapp);
-  color: #041c0e;
-  font-weight: 500;
-  box-shadow: none;
+  color: #FFFFFF;
+  font-weight: 600;
+  box-shadow: var(--shadow-btn-wa);
 }
 .btn-whatsapp:hover {
   transform: translateY(-1px);
   background: var(--whatsapp-dark);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  color: #fff;
+  box-shadow: 0 4px 12px rgba(18, 140, 126, 0.35);
+  color: #FFFFFF;
 }
 
 .btn-sm {
@@ -412,25 +372,25 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-/* --- 6. REFINED DARK GLASS NAVBAR ----------------------------------- */
+/* --- 6. CLEAN REFINED NAVBAR ----------------------------------- */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 100;
   padding: 14px 0;
   transition: all 0.25s ease;
-  background: rgba(3, 12, 20, 0.72);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-subtle);
 }
 
 .navbar.scrolled {
-  background: rgba(2, 8, 14, 0.92);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-medium);
-  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
   padding: 10px 0;
 }
 
@@ -453,23 +413,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-brand-logo {
-  width: 62px;
-  height: 62px;
-  border-radius: 0;
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-xs);
   object-fit: contain;
-  mix-blend-mode: lighten;
 }
 
 .nav-brand-icon {
   width: 36px;
   height: 36px;
   border-radius: var(--radius-sm);
-  background: linear-gradient(155deg, var(--blue-vivid), var(--blue-primary) 75%, #0F65C7);
-  color: #02070D;
+  background: linear-gradient(155deg, #38BDF8, #0284C7 75%, #0369A1);
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 16px var(--blue-glow);
+  box-shadow: 0 2px 8px var(--blue-glow);
 }
 
 .nav-links {
@@ -484,7 +443,7 @@ h1, h2, h3, h4, h5, h6 {
   list-style: none;
   margin: 0;
   padding: 4px 6px;
-  background: rgba(8, 25, 38, 0.45);
+  background: #F1F5F9;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-full);
 }
@@ -504,14 +463,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link:hover {
   color: var(--text-primary);
-  background: rgba(32, 196, 255, 0.08);
+  background: rgba(2, 132, 199, 0.08);
 }
 
 .nav-link.active {
-  color: #02070D;
+  color: #FFFFFF;
   background: var(--blue-electric);
-  font-weight: 700;
-  box-shadow: 0 0 16px rgba(32, 196, 255, 0.35);
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(2, 132, 199, 0.3);
 }
 
 .nav-actions {
@@ -528,7 +487,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border-subtle);
-  background: rgba(8, 25, 38, 0.6);
+  background: #F8FAFC;
   color: var(--text-secondary);
   transition: all 0.2s;
 }
@@ -536,7 +495,7 @@ h1, h2, h3, h4, h5, h6 {
 .icon-btn:hover {
   color: var(--blue-electric);
   border-color: var(--blue-electric);
-  box-shadow: 0 0 12px var(--blue-glow);
+  background: #F0F9FF;
 }
 
 .mobile-toggle {
@@ -556,7 +515,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   inset: 0;
   z-index: 200;
-  background: var(--bg-primary);
+  background: #FFFFFF;
   padding: 80px 32px 32px;
   display: flex;
   flex-direction: column;
@@ -564,6 +523,7 @@ h1, h2, h3, h4, h5, h6 {
   border-left: 1px solid var(--border-medium);
   transform: translateX(100%);
   transition: transform 0.3s var(--ease);
+  box-shadow: -8px 0 24px rgba(15, 23, 42, 0.08);
 }
 
 .mobile-menu.open {
@@ -573,21 +533,21 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-menu a {
   font-family: var(--font-primary);
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
 }
 
-/* --- 7. HOME HERO (TYPOGRAPHY-FIRST SWISS EDITORIAL) ----------------- */
+/* --- 7. HOME HERO SECTION ------------------------------------------- */
 .hero {
-  min-height: 88vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 35% 45%, rgba(19, 168, 255, 0.12), transparent 55%),
-    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-  padding: 100px 0 80px;
+    radial-gradient(circle at 40% 40%, rgba(2, 132, 199, 0.08), transparent 60%),
+    linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  padding: 90px 0 70px;
 }
 
 .hero-grid {
@@ -631,7 +591,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--blue-electric);
 }
 
-/* --- 8. STATS STRIP (STRUCTURED MATHEMATICAL METRIC GRID) ----------- */
+/* --- 8. STATS STRIP ------------------------------------------------- */
 .stats-strip {
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-subtle);
@@ -685,7 +645,7 @@ h1, h2, h3, h4, h5, h6 {
 .stat-value {
   font-family: var(--font-primary);
   font-size: 2.2rem;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--blue-electric);
   letter-spacing: -0.03em;
   line-height: 1.1;
@@ -696,11 +656,11 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.82rem;
   color: var(--text-secondary);
   margin-top: 6px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.02em;
 }
 
-/* --- 9. ABOUT SECTION (SWISS 2-COLUMN EDITORIAL) --------------------- */
+/* --- 9. ABOUT SECTION ----------------------------------------------- */
 .about-grid {
   display: grid;
   grid-template-columns: 5fr 7fr;
@@ -718,8 +678,8 @@ h1, h2, h3, h4, h5, h6 {
 .about-img {
   border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1px solid var(--border-medium);
-  background: var(--bg-surface-deep);
+  border: 1px solid var(--border-subtle);
+  background: #F8FAFC;
   box-shadow: var(--shadow-card);
 }
 
@@ -746,9 +706,9 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--text-primary);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .checklist-item i {
@@ -789,32 +749,30 @@ h1, h2, h3, h4, h5, h6 {
   padding: 22px 18px;
   text-align: center;
   flex-shrink: 0;
-  background: var(--bg-surface);
+  background: #FFFFFF;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-card);
   transition: all 0.25s var(--ease);
 }
 
 .dealer-card:hover {
   transform: translateY(-3px);
   border-color: var(--blue-electric);
-  background: var(--bg-surface-elevated);
-  box-shadow: 0 8px 24px rgba(32, 196, 255, 0.12);
+  box-shadow: var(--shadow-hover);
 }
 
 .dealer-icon {
   width: 48px;
   height: 48px;
   border-radius: var(--radius-sm);
-  background: #031019;
-  border: 1px solid var(--border-medium);
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.15rem;
   color: var(--blue-electric);
   font-family: var(--font-primary);
@@ -824,7 +782,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 80px;
   height: 80px;
   border-radius: var(--radius-sm);
-  background: transparent;
+  background: #FFFFFF;
   border: none;
   display: flex;
   align-items: center;
@@ -843,7 +801,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .dealer-name {
   font-family: var(--font-primary);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.92rem;
   margin-top: 12px;
   color: var(--text-primary);
@@ -853,7 +811,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-primary);
   font-size: 0.76rem;
   color: var(--text-muted);
-  font-weight: 300;
+  font-weight: 400;
   margin-top: 4px;
 }
 
@@ -868,11 +826,10 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  background: var(--bg-surface);
+  background: #FFFFFF;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-card);
   transition: all 0.3s var(--ease);
 }
 
@@ -886,7 +843,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 180px;
   overflow: hidden;
   position: relative;
-  background: var(--bg-surface-deep);
+  background: #F8FAFC;
   border-bottom: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
@@ -908,8 +865,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 46px;
   height: 46px;
   border-radius: var(--radius-sm);
-  background: rgba(32, 196, 255, 0.08);
-  border: 1px solid rgba(32, 196, 255, 0.2);
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -922,12 +879,10 @@ h1, h2, h3, h4, h5, h6 {
   right: 12px;
   font-family: var(--font-primary);
   font-size: 0.72rem;
-  font-weight: 500;
-  color: var(--text-primary);
-  background: rgba(2, 7, 13, 0.78);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid var(--border-subtle);
+  font-weight: 600;
+  color: #0369A1;
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
   padding: 3px 8px;
   border-radius: var(--radius-xs);
   letter-spacing: 0.04em;
@@ -945,7 +900,7 @@ h1, h2, h3, h4, h5, h6 {
 .product-brand {
   font-family: var(--font-primary);
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--blue-electric);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -954,7 +909,7 @@ h1, h2, h3, h4, h5, h6 {
 .product-name {
   font-family: var(--font-primary);
   font-size: 0.98rem;
-  font-weight: 500;
+  font-weight: 600;
   margin: 6px 0 8px;
   line-height: 1.35;
   color: var(--text-primary);
@@ -966,13 +921,13 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-secondary);
   line-height: 1.65;
   flex: 1;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .product-price {
   font-family: var(--font-primary);
   font-size: 0.8rem;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--text-muted);
   margin-top: 12px;
   margin-bottom: 16px;
@@ -984,7 +939,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 8px;
 }
 
-/* --- 12. PROPRIETOR SECTION (SWISS EDITORIAL) ----------------------- */
+/* --- 12. PROPRIETOR SECTION ----------------------------------------- */
 .owner-grid {
   display: grid;
   grid-template-columns: 4fr 8fr;
@@ -1002,8 +957,8 @@ h1, h2, h3, h4, h5, h6 {
 .owner-img {
   border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1px solid var(--border-medium);
-  background: var(--bg-surface-deep);
+  border: 1px solid var(--border-subtle);
+  background: #F8FAFC;
   box-shadow: var(--shadow-card);
 }
 
@@ -1033,12 +988,12 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.8rem;
   font-weight: 500;
   border: 1px solid var(--border-subtle);
-  background: var(--bg-surface);
+  background: #F1F5F9;
   color: var(--text-secondary);
   font-family: var(--font-primary);
 }
 
-/* --- 13. TESTIMONIALS (SWISS EDITORIAL QUOTES) ---------------------- */
+/* --- 13. TESTIMONIALS ----------------------------------------------- */
 .testimonial-track {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -1047,11 +1002,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .testimonial-card {
   padding: 28px;
-  background: var(--bg-surface);
+  background: #FFFFFF;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1070,12 +1024,12 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-secondary);
   line-height: 1.75;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .testimonial-author {
   font-family: var(--font-primary);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.86rem;
   margin-top: 20px;
   color: var(--text-primary);
@@ -1114,8 +1068,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 38px;
   height: 38px;
   border-radius: var(--radius-sm);
-  background: #041421;
-  border: 1px solid var(--border-subtle);
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
   color: var(--blue-electric);
   display: flex;
   align-items: center;
@@ -1127,12 +1081,10 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-medium);
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
   padding: 32px;
   border-radius: var(--radius-md);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--shadow-glass);
 }
 
@@ -1141,7 +1093,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 12px 16px;
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-xs);
-  background: rgba(3, 12, 20, 0.7);
+  background: #F8FAFC;
   color: var(--text-primary);
   font-size: 0.92rem;
   font-family: var(--font-primary);
@@ -1151,6 +1103,7 @@ h1, h2, h3, h4, h5, h6 {
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
+  background: #FFFFFF;
   border-color: var(--blue-electric);
   box-shadow: 0 0 0 3px var(--blue-glow);
 }
@@ -1160,9 +1113,9 @@ h1, h2, h3, h4, h5, h6 {
   resize: vertical;
 }
 
-/* --- 15. MINIMAL DARK FOOTER ---------------------------------------- */
+/* --- 15. CLEAN WHITE FOOTER ----------------------------------------- */
 .footer {
-  background: #01050A;
+  background: #F8FAFC;
   color: var(--text-secondary);
   padding: 64px 0 24px;
   border-top: 1px solid var(--border-subtle);
@@ -1178,7 +1131,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 320px;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--blue-electric), transparent);
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 .footer-grid {
@@ -1202,10 +1155,10 @@ h1, h2, h3, h4, h5, h6 {
 .footer h4 {
   font-family: var(--font-primary);
   font-size: 0.76rem;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--text-muted);
+  color: var(--text-primary);
   margin-bottom: 16px;
 }
 
@@ -1213,7 +1166,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-primary);
   font-size: 0.86rem;
   color: var(--text-secondary);
-  font-weight: 300;
+  font-weight: 400;
   display: block;
   margin-bottom: 8px;
 }
@@ -1225,7 +1178,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer-bottom {
   margin-top: 40px;
   padding-top: 20px;
-  border-top: 1px solid rgba(150, 210, 240, 0.06);
+  border-top: 1px solid var(--border-subtle);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -1245,19 +1198,19 @@ h1, h2, h3, h4, h5, h6 {
   width: 54px;
   height: 54px;
   border-radius: 50%;
-  background: var(--whatsapp);
-  color: #041c0e;
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.35);
   transition: all 0.25s var(--ease);
 }
 
 .wa-float:hover {
-  transform: scale(1.05);
-  background: var(--whatsapp-dark);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transform: scale(1.06);
+  background: linear-gradient(135deg, #0369A1 0%, #075985 100%);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45);
 }
 
 .scroll-top {
@@ -1268,14 +1221,13 @@ h1, h2, h3, h4, h5, h6 {
   width: 40px;
   height: 40px;
   border-radius: var(--radius-sm);
-  background: rgba(8, 25, 38, 0.85);
+  background: #FFFFFF;
   border: 1px solid var(--border-medium);
   color: var(--blue-electric);
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
   opacity: 0;
   pointer-events: none;
   transition: all 0.25s;
@@ -1286,18 +1238,23 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: auto;
 }
 
+.scroll-top:hover {
+  background: #F0F9FF;
+  border-color: var(--blue-electric);
+  transform: translateY(-2px);
+}
+
 /* --- 17. CATALOGUE & SEARCH ------------------------------------------ */
 .search-bar {
   width: 100%;
   padding: 14px 20px 14px 48px;
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-sm);
-  background: var(--bg-surface);
+  background: #FFFFFF;
   color: var(--text-primary);
   font-size: 0.95rem;
   font-family: var(--font-primary);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
@@ -1334,7 +1291,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
-  background: var(--bg-surface);
+  background: #FFFFFF;
   font-family: var(--font-primary);
   transition: all 0.2s;
   cursor: pointer;
@@ -1342,11 +1299,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .pill.active,
 .pill:hover {
-  background: var(--blue-primary);
-  color: #02070D;
-  font-weight: 500;
+  background: var(--blue-electric);
+  color: #FFFFFF;
+  font-weight: 600;
   border-color: var(--blue-electric);
-  box-shadow: 0 0 16px rgba(19, 168, 255, 0.3);
+  box-shadow: 0 2px 10px rgba(2, 132, 199, 0.25);
 }
 
 /* --- 18. PRODUCT DETAIL ---------------------------------------------- */
@@ -1367,12 +1324,13 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius-md);
   overflow: hidden;
   position: relative;
-  border: 1px solid var(--border-medium);
-  background: var(--bg-surface-deep);
+  border: 1px solid var(--border-subtle);
+  background: #F8FAFC;
   height: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: var(--shadow-card);
 }
 
 .detail-real-img {
@@ -1385,13 +1343,12 @@ h1, h2, h3, h4, h5, h6 {
   width: 80px;
   height: 80px;
   border-radius: var(--radius-md);
-  background: rgba(32, 196, 255, 0.08);
-  border: 1px solid rgba(32, 196, 255, 0.22);
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--blue-electric);
-  box-shadow: 0 0 24px rgba(32, 196, 255, 0.2);
 }
 
 .detail-img-badge {
@@ -1424,7 +1381,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .spec-table td:last-child {
   color: var(--text-primary);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* --- 19. PRIVACY POLICY / SIMPLE PAGES ------------------------------- */

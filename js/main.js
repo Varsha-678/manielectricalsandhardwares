@@ -1,39 +1,15 @@
 /**
  * Mani Electricals & Hardwares - Global Logic
+ * Clean White Theme Native
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Theme Management
-  const currentTheme = localStorage.getItem('mani_theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', currentTheme);
-  updateThemeIcon(currentTheme);
-
-  const themeBtn = document.getElementById('themeToggleBtn');
-  if (themeBtn) {
-    themeBtn.addEventListener('click', () => {
-      const active = document.documentElement.getAttribute('data-theme') || 'dark';
-      const newTheme = active === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('mani_theme', newTheme);
-      updateThemeIcon(newTheme);
-    });
+  // Clear any legacy dark theme setting from localStorage
+  if (localStorage.getItem('mani_theme')) {
+    localStorage.removeItem('mani_theme');
   }
 
-  function updateThemeIcon(theme) {
-    const sunIcon = document.getElementById('sunIcon');
-    const moonIcon = document.getElementById('moonIcon');
-    if (sunIcon && moonIcon) {
-      if (theme === 'light') {
-        sunIcon.style.display = 'none';
-        moonIcon.style.display = 'block';
-      } else {
-        sunIcon.style.display = 'block';
-        moonIcon.style.display = 'none';
-      }
-    }
-  }
-
-  // 2. Navbar Scroll & Active State
+  // 1. Navbar Scroll & Active State
   const navbar = document.querySelector('.navbar');
   const scrollTopBtn = document.getElementById('scrollTopBtn');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -103,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. Mobile Navigation Drawer
+  // 2. Mobile Navigation Drawer
   const mobileToggle = document.getElementById('mobileToggleBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   const mobileClose = document.getElementById('mobileCloseBtn');
@@ -129,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Contact Form Handler (Send via WhatsApp)
+  // 3. Contact Form Handler (Send via WhatsApp)
   const contactForm = document.getElementById('contactForm');
   if (contactForm && window.ManiData?.business) {
     contactForm.addEventListener('submit', (e) => {
@@ -144,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. Scroll Fade-Up Animations
+  // 4. Scroll Fade-Up Animations
   const fadeElems = document.querySelectorAll('.fade-up');
   if ('IntersectionObserver' in window && fadeElems.length > 0) {
     const observer = new IntersectionObserver((entries, obs) => {
@@ -161,13 +137,13 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeElems.forEach(el => el.classList.add('visible'));
   }
 
-  // 6. Dynamic Year in Footer
+  // 5. Dynamic Year in Footer
   const yearEl = document.getElementById('currentYear');
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // 7. Initialize Lucide Icons
+  // 6. Initialize Lucide Icons
   if (window.lucide) {
     window.lucide.createIcons();
   }

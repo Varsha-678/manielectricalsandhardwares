@@ -168,7 +168,8 @@
         }
       }
 
-      fragColor = vec4(col, 1.0);
+      float lineAlpha = clamp(max(col.r, max(col.g, col.b)) * 1.6, 0.0, 0.6);
+      fragColor = vec4(col, lineAlpha);
     }
 
     void main() {
@@ -207,7 +208,7 @@
     renderer.domElement.style.height = '100%';
     container.appendChild(renderer.domElement);
 
-    const gradientStops = ['#13A8FF', '#20C4FF', '#42D8FF', '#13A8FF'];
+    const gradientStops = ['#0284C7', '#0EA5E9', '#38BDF8', '#0284C7'];
     const lineGradient = Array.from({ length: 8 }, () => new THREE.Vector3(1, 1, 1));
     gradientStops.forEach((hex, i) => {
       const col = hexToVec3(hex);

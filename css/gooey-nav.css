@@ -1,8 +1,8 @@
 :root {
-  --color-1: #20B8FF;
-  --color-2: #149EFF;
-  --color-3: #49D8FF;
-  --color-4: #5CA8FF;
+  --color-1: #0284C7;
+  --color-2: #0EA5E9;
+  --color-3: #38BDF8;
+  --color-4: #0369A1;
 }
 
 .gooey-nav-container {
@@ -25,7 +25,7 @@
   margin: 0;
   position: relative;
   z-index: 3;
-  color: var(--text-muted, #9CB4C8);
+  color: var(--text-muted, #64748B);
 }
 
 .gooey-nav-container nav ul li {
@@ -35,13 +35,13 @@
   transition:
     background-color 0.25s ease,
     color 0.25s ease;
-  color: var(--text-muted, #9CB4C8);
+  color: var(--text-secondary, #334155);
   font-size: 0.88rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .gooey-nav-container nav ul li:hover {
-  color: var(--text-1, #F5FAFF);
+  color: var(--text-1, #0F172A);
 }
 
 .gooey-nav-container nav ul li a {
@@ -54,7 +54,7 @@
 }
 
 .gooey-nav-container nav ul li:focus-within:has(:focus-visible) {
-  box-shadow: 0 0 0 2px var(--blue-electric, #20B8FF);
+  box-shadow: 0 0 0 2px var(--blue-electric, #0284C7);
 }
 
 .gooey-nav-container nav ul li::after {
@@ -62,7 +62,7 @@
   position: absolute;
   inset: 0;
   border-radius: 100vw;
-  background: var(--blue-electric, #20B8FF);
+  background: var(--blue-electric, #0284C7);
   opacity: 0;
   transform: scale(0);
   transition: all 0.3s ease;
@@ -70,9 +70,9 @@
 }
 
 .gooey-nav-container nav ul li.active {
-  color: #02070D;
+  color: #FFFFFF;
   text-shadow: none;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .gooey-nav-container nav ul li.active::after {
@@ -94,15 +94,15 @@
 }
 
 .gooey-nav-container .effect.text {
-  color: var(--text-muted, #9CB4C8);
+  color: var(--text-muted, #64748B);
   transition: color 0.25s ease;
   font-size: 0.88rem;
-  font-weight: 700;
+  font-weight: 600;
   pointer-events: none;
 }
 
 .gooey-nav-container .effect.text.active {
-  color: #02070D;
+  color: #FFFFFF;
 }
 
 .gooey-nav-container .effect.filter {
@@ -114,7 +114,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--blue-electric, #20B8FF);
+  background: var(--blue-electric, #0284C7);
   transform: scale(0);
   opacity: 0;
   z-index: -1;
